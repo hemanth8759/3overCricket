@@ -4,12 +4,12 @@ var t1count = 0;
 var t1outcount = 0;
 var t1ar = [];
 let sc;
+
 var i = 0;
 var arr = 0;
 var t1ballcount = 18;
 var aew = 0;
 let players = ["player1", "player2", "player3", "player4", "player5"];
-
 document.getElementById("team1scr").value = 0;
 
 document.getElementById("player1t1").value = "";
@@ -24,6 +24,7 @@ function t1bat() {
         sc = Math.floor(Math.random() * 7);
         t1ar.push(sc);
         document.getElementById(players[t1outcount] + "t1").value += sc + " "
+        
 
         if (sc == 0) {
             t1outcount++
@@ -34,6 +35,7 @@ function t1bat() {
         }, 0)
         document.getElementById("team1scr").value = arr;
         console.log(arr)
+        
     }
     else if (t1outcount == 5 || t1ballcount == 0) {
         console.warn("innings Over");
@@ -41,8 +43,6 @@ function t1bat() {
         document.getElementById("b2").removeAttribute("disabled");
         return;
     }
-
-
 
 
     let t1scoreobj = {
@@ -55,7 +55,10 @@ function t1bat() {
     }
 
     localStorage.setItem("team1ScoreCard", JSON.stringify(t1scoreobj));
+
+    
 }
+
 
 ////////////////TEAM 2//////////////////////
 
